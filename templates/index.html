@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Ученики</title>
+{% endblock %}
+{% block content %}
+
+    <h1>Главная страница</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Имя </th>
+                <th>Фамилия</th>
+                <th>Загрузит</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in  student_data %}
+                <tr>
+                    <td>{{student.first_name}}</td>
+                    <td>{{student.last_name}}</td>
+                    <td><a href="upload/{{student.id}}">Документы</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}
+
+
